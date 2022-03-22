@@ -12,7 +12,7 @@ for (let i = 0; i < 255; i++) {
 
 //asccessing all of grids
 const grids = document.querySelectorAll('.grid');
-//adding event listener to all of grids
+//adding event listener to all of grids with forEach() method.
 grids.forEach(grid => {
     grid.addEventListener('mouseenter', () => {
         grid.classList.add('color-me');
