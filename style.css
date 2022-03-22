@@ -9,7 +9,7 @@
     margin: 20px auto;
 }
 
-.container {
+.grid-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -22,4 +22,8 @@
     height: 28px;
     width: 28px;
     border: 1px solid white;
+}
+
+.color-me {
+    background-color: black;
 }
