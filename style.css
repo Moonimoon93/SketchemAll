@@ -10,18 +10,18 @@
 }
 
 .grid-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    width: 480px;
+    width: 640px;
+    height: 640px;
     margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    border: 5px solid black;
 }
 
 .grid {
-    background-color: grey;
-    height: 28px;
-    width: 28px;
-    border: 1px solid white;
+    height: 6.25%;
+    width: 6.25%;
+    background-color: white;
 }
 
 .control {
@@ -32,4 +32,44 @@
 
 .color-me {
     background-color: black;
+}
+
+.size16 {
+    height: calc(100%/16);
+    width: calc(100%/16);
+}
+
+.size64 {
+    height: calc(100%/64);
+    width: calc(100%/64);
+}
+
+.size32 {
+    height: calc(100%/32);
+    width: calc(100%/32);
+}
+
+.size16 {
+    height: calc(100%/16);
+    width: calc(100%/16);
+}
+
+.size8 {
+    height: calc(100%/8);
+    width: calc(100%/8);
+}
+
+.size4 {
+    height: calc(100%/4);
+    width: calc(100%/4);
+}
+
+.size2 {
+    height: calc(100%/2);
+    width: calc(100%/2);
+}
+
+.size1 {
+    height: calc(100%/1);
+    width: calc(100%/1);
 }
