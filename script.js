@@ -31,9 +31,6 @@ reset_btn.addEventListener('click', () => {
     //Asking for a new grid size
     //Making sure user to choose from valid options. 
     canvasSize = parseInt(prompt('Please choose your grid. 64, 32, 16, 8, 4, 2, 1'));
-    if (canvasSize !== 64 || canvasSize !== 32 || canvasSize !== 16 || canvasSize !== 8 || canvasSize !== 4 || canvasSize !== 2 || canvasSize !== 1) {
-        canvasSize = parseInt(prompt('Choose from 64,32,16,8,4,2,1'))
-    }
 
     if (canvasSize === 64) {
         gridFunction(`size${64}`);
