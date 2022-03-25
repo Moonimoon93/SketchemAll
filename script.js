@@ -32,21 +32,43 @@ reset_btn.addEventListener('click', () => {
     //Making sure user to choose from valid options. 
     canvasSize = parseInt(prompt('Please choose your grid. 64, 32, 16, 8, 4, 2, 1'));
 
-    if (canvasSize === 64) {
-        gridFunction(`size${64}`);
-    } else if (canvasSize === 32) {
-        gridFunction(`size${32}`);
-    } else if (canvasSize === 16) {
-        gridFunction(`size${16}`);
-    } else if (canvasSize === 8) {
-        gridFunction(`size${8}`);
-    } else if (canvasSize === 4) {
-        gridFunction(`size${4}`);
-    } else if (canvasSize === 2) {
-        gridFunction(`size${2}`);
-    } else if (canvasSize === 1) {
-        gridFunction(`size${1}`);
+    const validation = () => {
+        canvasSize = parseInt(prompt('Please choose your grid. 64, 32, 16, 8, 4, 2, 1'));
+        if (canvasSize === 64) {
+            gridFunction(`size${64}`);
+        } else if (canvasSize === 32) {
+            gridFunction(`size${32}`);
+        } else if (canvasSize === 16) {
+            gridFunction(`size${16}`);
+        } else if (canvasSize === 8) {
+            gridFunction(`size${8}`);
+        } else if (canvasSize === 4) {
+            gridFunction(`size${4}`);
+        } else if (canvasSize === 2) {
+            gridFunction(`size${2}`);
+        } else if (canvasSize === 1) {
+            gridFunction(`size${1}`);
+        } else {
+            validation();
+        }
     }
+    validation();
+    // if (canvasSize === 64) {
+    //     gridFunction(`size${64}`);
+    // } else if (canvasSize === 32) {
+    //     gridFunction(`size${32}`);
+    // } else if (canvasSize === 16) {
+    //     gridFunction(`size${16}`);
+    // } else if (canvasSize === 8) {
+    //     gridFunction(`size${8}`);
+    // } else if (canvasSize === 4) {
+    //     gridFunction(`size${4}`);
+    // } else if (canvasSize === 2) {
+    //     gridFunction(`size${2}`);
+    // } else if (canvasSize === 1) {
+    //     gridFunction(`size${1}`);
+    // }
+
 });
 
 
