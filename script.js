@@ -21,6 +21,40 @@ const gridFunction = (size) => {
 }
 gridFunction(`size${canvasSize}`);
 
+//(2022-03-25) Adding random color drawing function
+//There are two buttons, Black and Color.
+//1. Default type is Black.
+//2. When Color button is pressed, random color will be applied each time mouseenter different grid.
+//3. Going to utilize Math.random() method. Since rgb color requires three integer values between 0~255. ex)rgb(0,0,0) is black.
+const rgb = () => {
+        let redValue = Math.floor(Math.random() * 256);
+        let greenValue = Math.floor(Math.random() * 256);
+        let blueValue = Math.floor(Math.random() * 256);
+        let rgbValue = `rgb(${redValue}, ${greenValue}, ${blueValue})`;
+        return rgbValue;
+    }
+    //Going to add two butons, one for random color and another for black grid.
+const randomColor = () => {
+    let grids = document.querySelectorAll('.grid');
+    grids.forEach(grid => {
+        grid.addEventListener('mouseenter', () => {
+            grid.style.backgroundColor = rgb();
+        })
+    })
+}
+const blackColor = () => {
+    let grids = document.querySelectorAll('.grid');
+    grids.forEach(grid => {
+        grid.addEventListener('mouseenter', () => {
+            grid.style.backgroundColor = 'black';
+        })
+    })
+}
+const rgbButton = document.querySelector('#randomColor');
+const blackButton = document.querySelector('#blackColor');
+rgbButton.addEventListener('click', randomColor);
+blackButton.addEventListener('click', blackColor);
+
 const reset_btn = document.querySelector('#reset');
 reset_btn.addEventListener('click', () => {
     let child = container.lastElementChild;
@@ -30,8 +64,7 @@ reset_btn.addEventListener('click', () => {
     }
     //Asking for a new grid size
     //Making sure user to choose from valid options. 
-    canvasSize = parseInt(prompt('Please choose your grid. 64, 32, 16, 8, 4, 2, 1'));
-
+    //Validation logic is implemented with a recursive function.
     const validation = () => {
         canvasSize = parseInt(prompt('Please choose your grid. 64, 32, 16, 8, 4, 2, 1'));
         if (canvasSize === 64) {
@@ -53,29 +86,4 @@ reset_btn.addEventListener('click', () => {
         }
     }
     validation();
-    // if (canvasSize === 64) {
-    //     gridFunction(`size${64}`);
-    // } else if (canvasSize === 32) {
-    //     gridFunction(`size${32}`);
-    // } else if (canvasSize === 16) {
-    //     gridFunction(`size${16}`);
-    // } else if (canvasSize === 8) {
-    //     gridFunction(`size${8}`);
-    // } else if (canvasSize === 4) {
-    //     gridFunction(`size${4}`);
-    // } else if (canvasSize === 2) {
-    //     gridFunction(`size${2}`);
-    // } else if (canvasSize === 1) {
-    //     gridFunction(`size${1}`);
-    // }
-
 });
-
-
-
-//Making a reset button to do two things:
-//1. reset the grid, make them go back to grey color background. (DONE)
-//2. a prompt should pop up asking size of the grid to project on web. ex)64 would be 64x64 grid, which is huge.(Partialy DONE)
-//In order for this to work, 1)need a maximum width or size of canvas, 2)make each grid to change size accordingly in order to fit. (DONE)
-
-//reset function first
